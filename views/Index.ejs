@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head'); %>
+<body>
+    <div class="container">
+        <%- include('partials/navbar'); %>
+        <%- include('partials/searcher'); %>
+        <div class="row mt-4">
+            <!--<h4 class=" text-dark text-center text-danger">Publicaciones por carrera</h4>-->
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=1"><img src="img/1.jpg" class="rounded" width="90%" height="80"
+                        alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=2"><img src="img/2.jpg" class="rounded" width="90%" height="80"
+                        alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=3"><img src="img/3.jpg" class="rounded" width="90%" height="80" alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=4"><img src="img/4.jpg" class="rounded" width="90%" height="80" alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=5"><img src="img/5.jpg" class="rounded" width="90%" height="80"
+                        alt=""></a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-xs-12 col-sm-12 mt-2 ">
+                <a href="/publicaciones?id=6"><img src="img/6.jpg" class="rounded" width="90%" height="80"
+                        alt=""></a>
+            </div>
+        </div>
+        <%- include('partials/tarjeta'); %>
+        <div class="row">
+            <div class="col-md-4 offset-md-5">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link "  id="previus">Anterior</a></li>
+                        <% for(let i=1;i<=totalPages;i++){ %>
+                            <li class="page-item"><a class="page-link foil" href="/listPublicaciones?page=<%=i%>"><%=i%></a></li>
+                        <%}%>
+                        <li class="page-item"><a class="page-link"  id="next">Siguiente</a></li>
+                    </ul>   
+                </nav>
+            </div>
+        </div>
+              
+    </div><!-- container -->
+    <script src="js/index.js"></script>
+</body>
+</html>
