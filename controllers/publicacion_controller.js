@@ -1,6 +1,5 @@
 const Publicacion = require('../models/publicacion');
 const Persona = require('../models/persona');
-const publicacion = require('../models/Publicacion');
 const Comentario = require('../models/comentario');
 
 function getFechaHora(){
