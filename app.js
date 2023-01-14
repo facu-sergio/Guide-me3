@@ -59,5 +59,5 @@ app.use(routes_publications);
 app.use(routes_auth);
 
 
-app.listen(3000);
+app.listen(process.env.PORT||3000);
 console.log("server on http://localhost:3000/index");
