@@ -9,12 +9,8 @@ const connectionSync = mysql.createConnection({
     database: process.env.DB_DATABASE,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
-    dialect: 'mysql',
-    dialectOptions: {
-        bigNumberStrings: true,
-        ssl: {
-          ca: fs.readFileSync(__dirname + '/ca-certificates.crt')
-        }
+    ssl: {
+        rejectUnauthorized: false
     }
 });
 
