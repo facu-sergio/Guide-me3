@@ -185,7 +185,7 @@ module.exports.guardarRespuesta = async(req,res)=>{
 }
 
 module.exports.getListPubli = async(req,res)=>{
-    let publicacionesTotal = await publicacion.getPublicadas();
+    let publicacionesTotal = await Publicacion.getPublicadas();
     let page = req.query.page;
     let publicaciones =  await Publicacion.getTenpublics(page);
     let totalPages =  Math.ceil(publicacionesTotal.length/8);
