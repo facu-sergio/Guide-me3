@@ -166,7 +166,8 @@ module.exports.guardarComentario = async(req,res)=>{
     let idpersona = res.locals.userLogged[0].ID_PERSONA;
     let idPublicacion = req.body.idpubli;
     let cuerpo =  req.body.cuerpo;
-    let newComent =  new Comentario(idpersona,idPublicacion,cuerpo,0,null,0);
+    let hora = getFechaHora();
+    let newComent =  new Comentario(idpersona,idPublicacion,cuerpo,0,hora,0);
     newComent.saveComentario();
     res.redirect(req.get('referer'));;
 }
@@ -176,7 +177,8 @@ module.exports.guardarRespuesta = async(req,res)=>{
     let idPublicacion =  req.query.publi;
     let cuerpo =  req.body.cuerpo;
     let respuestaDe = req.query.comen;
-    let newComent =  new Comentario(idpersona,idPublicacion,cuerpo,respuestaDe,null,0);
+    let hora = getFechaHora();
+    let newComent =  new Comentario(idpersona,idPublicacion,cuerpo,respuestaDe,hora,0);
     newComent.saveComentario();
     res.redirect(req.get('referer'));
 
