@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-
+var fs = require('fs');
 const dotenv = require('dotenv');
 dotenv.config({path:'./.env'});
 
@@ -9,6 +9,13 @@ const connectionSync = mysql.createConnection({
     database: process.env.DB_DATABASE,
     user: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
+    dialect: 'mysql',
+    dialectOptions: {
+        bigNumberStrings: true,
+        ssl: {
+          ca: fs.readFileSync(__dirname + '/ca-certificates.crt')
+        }
+    }
 });
 
 const connectionAsync = connectionSync.promise();
