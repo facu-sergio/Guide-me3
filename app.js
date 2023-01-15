@@ -26,7 +26,7 @@ app.use(express.static('public'));
 
 
 //sesion
-const session = require('express-session')
+const session = require('cookie-session')
 const cookieParser = require('cookie-parser');
 app.use(cookieParser('secret'));
 app.use(session({ cookie: { maxAge: 1800000 }, 
