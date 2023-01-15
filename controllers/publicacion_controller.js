@@ -79,7 +79,7 @@ module.exports.getPublicacionByCarrera = async(req,res)=>{
 }
 
 module.exports.search = async(req,res)=>{
-    let publicaciones = await publicacion.getPublicacionByTitulo(req.body.titulo)
+    let publicaciones = await Publicacion.getPublicacionByTitulo(req.body.titulo)
     let nombres = [];
     let apellidos = [];
     let fotos = [];
